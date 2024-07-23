@@ -1,0 +1,120 @@
+{%load static%}
+<html>
+  <title>Index::page</title>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+      }
+      #a {
+        width: 100%;
+        height: 100px;
+        border: 5px solid orange;
+        background: navy;
+      }
+      #b {
+        width: 100%;
+        height: 100px;
+        border: 5px solid red;
+      }
+      ul li {
+        float: left;
+        width: 250px;
+        font-size: 45px;
+        list-style: none;
+      }
+      #c {
+        width: 100%;
+        height: 500px;
+        border: 5px solid red;
+        background: url("{%static 'Images/atri_logo-removebg-preview.png'%}");
+        background-repeat: no-repeat;
+        background-size: 100% 500px;
+      }
+      #d {
+        width: 500px;
+        height: 400px;
+        background: white;
+        margin-top: 50px;
+        border-radius: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="a">
+      <center>
+        <h1 style="color: white">Library Management System</h1>
+      </center>
+    </div>
+    <div id="b">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="/addbook">addbook</a></li>
+        <li><a href="/student">Student</a></li>
+        <li><a href="/librarian">Librarian</a></li>
+        <li><a href="/ShowBooks">Show Books</a></li>
+      </ul>
+    </div>
+    <form action="/AddBookAction" method="post">
+    <table>
+      {% csrf_token %}
+    <tr>
+        <th>
+          <input
+            type="text"
+            name="rno"
+            placeholder="rno"
+            style="width: 300px; height: 50px; border-radius: 50px"
+            required
+          />
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <input
+            type="text"
+            name="bname"
+            placeholder="bname"
+            style="width: 300px; height: 50px; border-radius: 50px"
+            required
+          />
+        </th>
+      </tr>
+      <th>
+        <input
+          type="text"
+          name="author"
+          placeholder="author"
+          style="width: 300px; height: 50px; border-radius: 50px"
+          required
+        />
+      </th>
+    </tr>
+    <tr>
+        <th>
+          <input
+            type="submit"
+            value="add"
+            style="
+              width: 300px;
+              height: 50px;
+              border-radius: 50px;
+              background: navy;
+              color: whitesmoke;
+              font-size: 30px;
+            "
+          />
+        </th>
+      </tr>
+    </table>
+  </form>
+    <div id="c">
+      <center>
+        <div id="d">
+          <h1 style="color: navy">Library Home</h1>
+        </div>
+      </center>
+    </div>
+  </body>
+</html>
